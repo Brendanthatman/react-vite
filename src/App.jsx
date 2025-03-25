@@ -53,6 +53,7 @@ function FunnyText() {
       <button onClick={() => setInnerText(!innertext)}>{innertext ? 'Press to hide funny text' : 'Press for funny text'}</button>
       <div>
         {innertext && <div id='containerRickRoll'>
+          {/*AI used to put P tags on every line. AI Model: ChatGPT*/}
           <p>We're no strangers to love</p>
           <p>You know the rules and so do I</p>
           <p>A full commitment's what I'm thinkin' of</p>
