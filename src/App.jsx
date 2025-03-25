@@ -3,8 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import rickRollImage from './assets/14-rickroll.jpg'
 import './App.css'
-import rickText from './assets/rickroll.txt'
 import { createElement } from 'react'
+
+const bestSongs = [
+  {rank: 1, title: "Never Gonna Give You Up", link: "https://youtu.be/dQw4w9WgXcQ?si=p6xz3-YA7OusLlHi"},
+  {rank: 2, title: "Buddy Holly", link: "https://youtu.be/kemivUKb4f4?si=GKCe4EUrPDGhjCct"},
+  {rank: 3, title: "Love Story", link: "https://youtu.be/8xg3vE8Ie_E?si=SfvaRizTkIha-u0O"}
+];
 
 function RandomNumber() {
   const [rand, setRand] = useState(0);
@@ -17,7 +22,28 @@ function RandomNumber() {
   );
 }
 
-function FunnyText () {
+function BestSongsEver() {
+  const listSongs = bestSongs.map(song =>
+    <>
+    <tr>
+      <td>{song.rank}</td>
+      <td>{song.title}</td>
+      <td><a href={song.link}>YouTube Link</a></td>
+    </tr>
+    </>
+  );
+
+  return (
+    <div>
+      <h2>A List of the Best Songs Ever</h2>
+      <table id='favoritesTable'>
+        {listSongs}
+      </table>
+    </div>
+  );
+}
+
+function FunnyText() {
   const [innertext, setInnerText] = useState(false);
 
   return (
@@ -76,8 +102,6 @@ function FunnyText () {
 }
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
@@ -90,6 +114,7 @@ function App() {
       </div>
       <h1>Vite + React + Rick Roll</h1>
       <RandomNumber />
+      <BestSongsEver />
       <FunnyText />
     </>
   )
