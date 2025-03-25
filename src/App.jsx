@@ -3,6 +3,39 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import rickRollImage from './assets/14-rickroll.jpg'
 import './App.css'
+import rickText from './assets/rickroll.txt'
+
+function rickRollText (theInput){
+  if(theInput == ""){
+    return {rickText};
+  }
+  else {
+    return "";
+  }
+}
+
+function RandomNumber() {
+  const [rand, setRand] = useState(0);
+
+  return (
+    <>
+      <h2>Need a random number? Click below!</h2>
+      <button onClick={() => setRand((rand) => (Math.floor(Math.random() * 10000000)))}>{rand}</button>
+    </>
+  );
+}
+
+function FunnyText () {
+  const [innertext, setInnerText] = useState();
+
+  return (
+    <>
+      <h2>Want to see some funny text? Click below!</h2>
+      <button onClick={() => setInnerText((innertext) => rickRollText(innertext))}>Press Here</button>
+      <p>{innertext}</p>
+    </>
+  );
+}
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +62,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <RandomNumber />
+      <FunnyText />
     </>
   )
 }
