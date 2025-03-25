@@ -6,61 +6,6 @@ import './App.css'
 import rickText from './assets/rickroll.txt'
 import { createElement } from 'react'
 
-const lyrics = [
-  "We're no strangers to love",
-  "You know the rules and so do I",
-  "A full commitment's what I'm thinkin' of",
-  "You wouldn't get this from any other guy",
-  "I just wanna tell you how I'm feeling",
-  "Gotta make you understand",
-  "Never gonna give you up, never gonna let you down",
-  "Never gonna run around and desert you",
-  "Never gonna make you cry, never gonna say goodbye",
-  "Never gonna tell a lie and hurt you",
-  "We've known each other for so long",
-  "Your heart's been aching, but you're too shy to say it",
-  "Inside, we both know what's been going on",
-  "We know the game and we're gonna play it",
-  "And if you ask me how I'm feeling",
-  "Don't tell me you're too blind to see",
-  "Never gonna give you up, never gonna let you down",
-  "Never gonna run around and desert you",
-  "Never gonna make you cry, never gonna say goodbye",
-  "Never gonna tell a lie and hurt you",
-  "Never gonna give you up, never gonna let you down",
-  "Never gonna run around and desert you",
-  "Never gonna make you cry, never gonna say goodbye",
-  "Never gonna tell a lie and hurt you",
-  "We've known each other for so long",
-  "Your heart's been aching, but you're too shy to say it",
-  "Inside, we both know what's been going on",
-  "We know the game and we're gonna play it",
-  "I just wanna tell you how I'm feeling",
-  "Gotta make you understand",
-  "Never gonna give you up, never gonna let you down",
-  "Never gonna run around and desert you",
-  "Never gonna make you cry, never gonna say goodbye",
-  "Never gonna tell a lie and hurt you",
-  "Never gonna give you up, never gonna let you down",
-  "Never gonna run around and desert you",
-  "Never gonna make you cry, never gonna say goodbye",
-  "Never gonna tell a lie and hurt you",
-  "Never gonna give you up, never gonna let you down",
-  "Never gonna run around and desert you",
-  "Never gonna make you cry, never gonna say goodbye",
-  "Never gonna tell a lie and hurt you"
-];
-
-
-function rickRollText (){
-  const thediv = document.getElementById('containerRickRoll');
-  for (let lyric in lyrics) {
-    const insertP = createElement("p");
-    insertP.textContent = lyric;
-    thediv.appendChild(insertP);
-  } 
-}
-
 function RandomNumber() {
   const [rand, setRand] = useState(0);
 
@@ -78,9 +23,53 @@ function FunnyText () {
   return (
     <>
       <h2>Want to see some funny text? Click below!</h2>
-      <button onClick={() => setInnerText(!innertext)}>{innertext ? 'Press for funny text' : 'Press to hide funny text'}</button>
+
+      <button onClick={() => setInnerText(!innertext)}>{innertext ? 'Press to hide funny text' : 'Press for funny text'}</button>
       <div>
-        {setInnerText && <div id='containerRickRoll'></div>}
+        {innertext && <div id='containerRickRoll'>
+          <p>We're no strangers to love</p>
+          <p>You know the rules and so do I</p>
+          <p>A full commitment's what I'm thinkin' of</p>
+          <p>You wouldn't get this from any other guy</p>
+          <p>I just wanna tell you how I'm feeling</p>
+          <p>Gotta make you understand</p>
+          <p>Never gonna give you up, never gonna let you down</p>
+          <p>Never gonna run around and desert you</p>
+          <p>Never gonna make you cry, never gonna say goodbye</p>
+          <p>Never gonna tell a lie and hurt you</p>
+          <p>We've known each other for so long</p>
+          <p>Your heart's been aching, but you're too shy to say it</p>
+          <p>Inside, we both know what's been going on</p>
+          <p>We know the game and we're gonna play it</p>
+          <p>And if you ask me how I'm feeling</p>
+          <p>Don't tell me you're too blind to see</p>
+          <p>Never gonna give you up, never gonna let you down</p>
+          <p>Never gonna run around and desert you</p>
+          <p>Never gonna make you cry, never gonna say goodbye</p>
+          <p>Never gonna tell a lie and hurt you</p>
+          <p>Never gonna give you up, never gonna let you down</p>
+          <p>Never gonna run around and desert you</p>
+          <p>Never gonna make you cry, never gonna say goodbye</p>
+          <p>Never gonna tell a lie and hurt you</p>
+          <p>We've known each other for so long</p>
+          <p>Your heart's been aching, but you're too shy to say it</p>
+          <p>Inside, we both know what's been going on</p>
+          <p>We know the game and we're gonna play it</p>
+          <p>I just wanna tell you how I'm feeling</p>
+          <p>Gotta make you understand</p>
+          <p>Never gonna give you up, never gonna let you down</p>
+          <p>Never gonna run around and desert you</p>
+          <p>Never gonna make you cry, never gonna say goodbye</p>
+          <p>Never gonna tell a lie and hurt you</p>
+          <p>Never gonna give you up, never gonna let you down</p>
+          <p>Never gonna run around and desert you</p>
+          <p>Never gonna make you cry, never gonna say goodbye</p>
+          <p>Never gonna tell a lie and hurt you</p>
+          <p>Never gonna give you up, never gonna let you down</p>
+          <p>Never gonna run around and desert you</p>
+          <p>Never gonna make you cry, never gonna say goodbye</p>
+          <p>Never gonna tell a lie and hurt you</p>
+          </div>}
       </div>
     </>
   );
